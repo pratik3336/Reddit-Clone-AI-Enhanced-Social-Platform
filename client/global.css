@@ -1,0 +1,348 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    --primary: 0 0% 15%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 15%;
+
+    --radius: 0.375rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 25%;
+    --sidebar-primary: 0 0% 15%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 15%;
+
+    /* Reddit brand color */
+    --reddit-orange: 16 100% 55%;
+
+    /* Wireframe specific colors */
+    --wireframe-bg: 0 0% 100%;
+    --wireframe-border: 0 0% 85%;
+    --wireframe-text-primary: 0 0% 15%;
+    --wireframe-text-secondary: 0 0% 35%;
+    --wireframe-text-muted: 0 0% 55%;
+    --wireframe-surface-primary: 0 0% 98%;
+    --wireframe-surface-secondary: 0 0% 95%;
+    --wireframe-surface-hover: 0 0% 92%;
+  }
+
+  .dark {
+    --background: 0 0% 9%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 95%;
+    --sidebar-background: 0 0% 9%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 0% 95%;
+    --sidebar-primary-foreground: 0 0% 9%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 95%;
+
+    /* Reddit brand color */
+    --reddit-orange: 16 100% 55%;
+
+    /* Wireframe specific colors for dark mode */
+    --wireframe-bg: 0 0% 9%;
+    --wireframe-border: 0 0% 20%;
+    --wireframe-text-primary: 0 0% 95%;
+    --wireframe-text-secondary: 0 0% 75%;
+    --wireframe-text-muted: 0 0% 55%;
+    --wireframe-surface-primary: 0 0% 12%;
+    --wireframe-surface-secondary: 0 0% 15%;
+    --wireframe-surface-hover: 0 0% 18%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Accessibility Styles */
+  .large-text {
+    font-size: 1.125rem;
+  }
+
+  .large-text h1 {
+    font-size: 2rem;
+  }
+
+  .large-text h2 {
+    font-size: 1.75rem;
+  }
+
+  .large-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .large-text .text-sm {
+    font-size: 1rem;
+  }
+
+  .large-text .text-xs {
+    font-size: 0.875rem;
+  }
+
+  /* High contrast mode adjustments */
+  .high-contrast * {
+    border-color: currentColor !important;
+  }
+
+  .high-contrast button {
+    border: 2px solid currentColor !important;
+  }
+
+  .high-contrast input {
+    border: 2px solid currentColor !important;
+  }
+
+  /* Reduced motion */
+  .reduce-motion *,
+  .reduce-motion *::before,
+  .reduce-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Focus styles for better accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--reddit-orange));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Skip link for keyboard navigation */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: hsl(var(--wireframe-text-primary));
+    color: hsl(var(--wireframe-bg));
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+  }
+
+  .skip-link:focus {
+    top: 6px;
+  }
+
+  /* Advanced Microinteraction Styles */
+  .smooth-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .smooth-hover:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Loading states */
+  .loading-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--wireframe-surface-secondary)) 25%,
+      hsl(var(--wireframe-surface-hover)) 50%,
+      hsl(var(--wireframe-surface-secondary)) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--wireframe-surface-secondary));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--wireframe-border));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--reddit-orange));
+  }
+
+  /* Interactive elements */
+  .interactive-element {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .interactive-element::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  .interactive-element:hover::before {
+    left: 100%;
+  }
+
+  /* Stagger animation utility */
+  .stagger-animation > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: stagger-in 0.5s ease forwards;
+  }
+
+  .stagger-animation > *:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-animation > *:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-animation > *:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-animation > *:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  .stagger-animation > *:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  @keyframes stagger-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Elastic scale animation */
+  .elastic-scale:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+
+  /* Breathing animation for important elements */
+  .breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+}
