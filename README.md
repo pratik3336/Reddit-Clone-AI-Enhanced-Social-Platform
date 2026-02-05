@@ -1,47 +1,64 @@
-# 🚀 Reddit Clone - Fully Functional Social Media Platform
+# 🚀 Reddit Clone — Full-Stack Social Media Platform
 
-A modern, feature-rich Reddit clone built with React, TypeScript, and Vite. This application demonstrates advanced web development techniques with a focus on user experience, accessibility, and performance.
+A modern, feature-rich Reddit-style social media application built using **React, TypeScript, and Vite**.
+This project highlights advanced frontend architecture, performance optimization, accessibility best practices, and AI-enhanced user experiences.
 
-## ✨ Features
+---
 
-### 🏠 **Core Functionality**
-- **Complete Post System**: Create, view, vote, and save posts
-- **Comment System**: Nested comments with voting and threading
-- **Subreddit Communities**: Join, browse, and interact with communities
-- **User Profiles**: User management with karma and badges
-- **Search & Discovery**: AI-powered semantic search with filters
-- **Real-time Interactions**: Optimistic updates for smooth UX
+## ✨ Key Features
 
-### 🎨 **Advanced UI/UX**
-- **Modern Design**: Clean, responsive interface with Reddit branding
-- **Dark/Light Mode**: Theme switching with system preference detection
-- **Microinteractions**: Smooth animations and hover effects
-- **Mobile-First**: Fully responsive design for all devices
-- **Loading States**: Skeleton screens and progress indicators
-- **Error Handling**: Graceful error states with retry mechanisms
+### 🏠 Core Functionality
 
-### 🤖 **AI-Powered Features**
-- **Smart Search**: Semantic search with typo correction
-- **Content Analysis**: AI-generated summaries and insights
-- **Personalization**: Interest-based content recommendations
-- **Trending Detection**: AI-powered trend analysis
-- **Sentiment Analysis**: Content sentiment classification
+* **Post System:** Create, edit, view, vote, and save posts
+* **Threaded Comments:** Nested discussions with voting support
+* **Community Spaces:** Join and explore subreddit-like communities
+* **User Profiles:** Karma tracking, badges, and activity history
+* **Search & Discovery:** AI-powered semantic search with filtering
+* **Real-Time UX:** Optimistic UI updates for seamless interaction
 
-### ♿ **Accessibility**
-- **WCAG 2.1 Compliant**: Full accessibility support
-- **Screen Reader Support**: ARIA labels and semantic HTML
-- **Keyboard Navigation**: Complete keyboard accessibility
-- **High Contrast Mode**: Enhanced visibility options
-- **Reduced Motion**: Respects user motion preferences
-- **Large Text Support**: Scalable typography
+---
 
-### 🔧 **Technical Excellence**
-- **TypeScript**: Full type safety throughout the application
-- **React Query**: Advanced data fetching with caching
-- **State Management**: Optimistic updates and real-time sync
-- **Performance**: Lazy loading and code splitting
-- **SEO Optimized**: Meta tags and structured data
-- **PWA Ready**: Service worker and offline support
+### 🎨 UI / UX Experience
+
+* **Modern Responsive Design** inspired by Reddit
+* **Dark & Light Modes** with system preference detection
+* **Smooth Microinteractions** and animations
+* **Mobile-First Layout** optimized for all screen sizes
+* **Skeleton Loaders & Progress Indicators**
+* **Robust Error Handling** with graceful recovery states
+
+---
+
+### 🤖 AI-Powered Capabilities
+
+* **Semantic Search** with typo tolerance
+* **Content Summarization & Insights**
+* **Personalized Recommendations** based on user interests
+* **Trending Topic Detection**
+* **Sentiment Analysis** for content evaluation
+
+---
+
+### ♿ Accessibility (WCAG 2.1 Focused)
+
+* Screen reader compatibility with semantic HTML & ARIA labels
+* Full keyboard navigation support
+* High-contrast viewing options
+* Reduced motion support for accessibility needs
+* Scalable typography for better readability
+
+---
+
+### 🔧 Technical Highlights
+
+* **TypeScript** for strong type safety
+* **React Query** for efficient data fetching & caching
+* **Optimistic State Management** for responsive UI
+* **Code Splitting & Lazy Loading** for performance
+* **SEO Optimization** via structured metadata
+* **PWA Support** with offline capability
+
+---
 
 ## 🛠️ Technology Stack
 
